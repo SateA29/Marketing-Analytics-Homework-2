@@ -53,7 +53,7 @@ class Bandit(ABC):
 #--------------------------------------#
 
 class EpsilonGreedy(Bandit):
-    def __init__(self, true_means, epsilon=0.1):
+    def __init__(self, true_means, epsilon=0.2):
         super().__init__(true_means)
         self.epsilon = epsilon
         self.true_means = true_means
@@ -151,7 +151,7 @@ class Visualization:
 
     def plot2(self, epsilon_greedy_rewards, thompson_rewards):
 
-        plt.figure(figsize=(10, 5))
+        plt.figure(figsize=(12, 6))
         cumulative_epsilon_greedy_rewards = [sum(epsilon_greedy_rewards[:i+1]) for i in range(len(epsilon_greedy_rewards))]
         cumulative_thompson_rewards = [sum(thompson_rewards[:i+1]) for i in range(len(thompson_rewards))]
 
