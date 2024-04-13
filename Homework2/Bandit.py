@@ -23,9 +23,9 @@ class Bandit(ABC):
 
     @abstractmethod
     def __init__(self, true_means):
-        self.true_means = true_means  # True means of each arm
-        self.estimated_means = [0.0] * len(true_means)  # Estimated means of each arm
-        self.action_counts = [0] * len(true_means)  # Number of times each arm is pulled
+        self.true_means = true_means  # true means of each
+        self.estimated_means = [0.0] * len(true_means)  # estimated means of each
+        self.action_counts = [0] * len(true_means)  # number of times each is pulled
 
     @abstractmethod
     def __repr__(self):
@@ -123,8 +123,8 @@ class ThompsonSampling(Bandit):
         return f"ThompsonSampling Results: Average Reward={avg_reward:.2f}, Average Regret={avg_regret:.2f}"
 
 #--------------------------------------#
-true_means = [1, 2, 3, 4]  # Renamed variable from Bandit_Reward to true_means
-num_trials = 20000  # Renamed variable from NumberOfTrials to num_trials
+true_means = [1, 2, 3, 4]  
+num_trials = 20000  
 
 #--------------------------------------#
 class Visualization:
@@ -199,13 +199,9 @@ def comparison(num_trials):
     thompson_rewards = thompson_bandit.experiment(num_trials)
 
     vis = Visualization()
-
     vis.plot1(epsilon_greedy_rewards, thompson_rewards)
-
     vis.plot2(epsilon_greedy_rewards, thompson_rewards)
-
     vis.store_rewards_to_csv(epsilon_greedy_rewards, thompson_rewards)
-
     vis.report_cumulative_reward_and_regret(epsilon_greedy_rewards, thompson_rewards)
 
 if __name__ == "__main__":
