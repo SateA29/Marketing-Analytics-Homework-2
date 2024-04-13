@@ -191,7 +191,7 @@ class Visualization:
 #--------------------------------------#
 def comparison(num_trials):
 
-    epsilon = 0.1
+    epsilon = 0.2
     epsilon_greedy_bandit = EpsilonGreedy(true_means, epsilon)
     thompson_bandit = ThompsonSampling(true_means)
 
